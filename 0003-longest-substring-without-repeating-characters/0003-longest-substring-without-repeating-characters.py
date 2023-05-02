@@ -9,7 +9,6 @@ class Solution:
                 left = char_map[char]+1 
             char_map[char] = idx
             max_len = max(max_len, idx-left+1)
-            print(left, idx, max_len)
                 
                 
         return max_len
