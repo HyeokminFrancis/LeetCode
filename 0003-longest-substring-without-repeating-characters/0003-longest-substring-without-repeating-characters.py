@@ -5,11 +5,10 @@ class Solution:
         max_len = 0
         for idx in range(len(s)):
             char = s[idx]
-            if(char in char_map and char_map[char] +1 > left):
+            if(char in char_map and char_map[char]>=left):
                 left = char_map[char]+1 
             char_map[char] = idx
             max_len = max(max_len, idx-left+1)
-                
                 
         return max_len
             
