@@ -4,11 +4,8 @@ class Solution:
         for i, num in enumerate(nums):
             maximumPoints.append(i + num)
 
-        
-        
         currIdx = 0
         numsLen = len(nums)
-        
         while True:
             if maximumPoints[currIdx] >= numsLen -1:
                 return True
@@ -21,9 +18,6 @@ class Solution:
             
             newCurrIdx = currIdx +  len(jumpPoints) - jumpPoints.index(max(jumpPoints)) 
             
-            
-            if(newCurrIdx <= currIdx):
-                return False
             
             currIdx = newCurrIdx
             
