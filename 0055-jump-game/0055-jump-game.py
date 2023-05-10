@@ -1,9 +1,6 @@
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
-        maximumPoints = []
-        for i, num in enumerate(nums):
-            maximumPoints.append(i + num)
-
+        maximumPoints = [i+num for i, num in enumerate(nums)]
         currIdx = 0
         numsLen = len(nums)
         while True:
