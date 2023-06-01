@@ -1,17 +1,15 @@
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         
-        def genPa(leftPar: int, rightPar: int, par:str, parList: List[str]):
-            if(leftPar == 0 and rightPar == 0):
+        def genPar(leftParNum: int, rightParNum: int, par:str, parList: List[str]):
+            if(leftParNum == 0 and rightParNum == 0):
                 parList.append(par)
-                return
-            
-            if(leftPar > 0):
-                genPa(leftPar - 1, rightPar + 1, par + '(', parList)
-            if(rightPar > 0):
-                genPa(leftPar, rightPar - 1, par + ')', parList)
-            
+                return    
+            if(leftParNum > 0):
+                genPar(leftParNum - 1, rightParNum + 1, par + '(', parList)
+            if(rightParNum > 0):
+                genPar(leftParNum, rightParNum - 1, par + ')', parList)
         
-        paList = []
-        genPa(n,0,'',paList)
-        return paList
+        parList = []
+        genPar(n, 0, '', parList)
+        return parList
