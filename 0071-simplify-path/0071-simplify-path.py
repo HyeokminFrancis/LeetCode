@@ -1,8 +1,6 @@
 class Solution:
     def simplifyPath(self, path: str) -> str:
-        dirList = path.split('/')
-        dirList = [dir for dir in dirList if dir != '']
-
+        dirList = [dir for dir in path.split('/') if dir != '']
         simPath = []
         for dir in dirList:
             if(dir == '.'):
@@ -12,10 +10,5 @@ class Solution:
                     simPath.pop()
             else:
                 simPath.append(dir)
-            
-            
-        
-        
-        
         simPath = '/' + '/'.join(simPath)
         return simPath
