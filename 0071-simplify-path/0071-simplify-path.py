@@ -2,7 +2,6 @@ class Solution:
     def simplifyPath(self, path: str) -> str:
         dirList = path.split('/')
         dirList = [dir for dir in dirList if dir != '']
-        print(dirList)
 
         simPath = []
         for dir in dirList:
