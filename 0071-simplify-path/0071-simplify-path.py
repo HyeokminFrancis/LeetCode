@@ -1,14 +1,14 @@
 class Solution:
     def simplifyPath(self, path: str) -> str:
-        dirList = [dir for dir in path.split('/') if dir != '']
-        simPath = []
-        for dir in dirList:
+        absDirList = [dir for dir in path.split('/') if dir != '']
+        canDirList = []
+        for dir in absDirList:
             if(dir == '.'):
                 continue
             elif(dir == '..'):
-                if(len(simPath) > 0):
-                    simPath.pop()
+                if(len(canDirList) > 0):
+                    canDirList.pop()
             else:
-                simPath.append(dir)
-        simPath = '/' + '/'.join(simPath)
-        return simPath
+                canDirList.append(dir)
+        canPath = '/' + '/'.join(canDirList)
+        return canPath
